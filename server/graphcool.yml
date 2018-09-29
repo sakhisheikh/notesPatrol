@@ -25,7 +25,6 @@ functions:
     type: resolver
     schema: src/hello.graphql
 
-
 # Model/Relation permissions are used to limit the API access
 # To take the burden of thinking about those while development, we
 # preconfigured the wildcard ("*") permission that allows everything
@@ -35,9 +34,13 @@ permissions:
   - operation: "*"
 
 
-# Your root tokens used for functions to get full access to the API
-# Read more here:
-# https://www.graph.cool/docs/reference/auth/authentication/authentication-tokens-eip7ahqu5o
-# rootTokens:
-#   - mytoken
+authenticate:
+  handler:
+    code:
+      src: ./src/auth0/auth0Authentication.js
+      environment:
+        AUTH0_DOMAIN: https://notes-patrol.auth0.com
+        AUTH0_API_IDENTIFIER: https://notes-patrol.auth0.com/api/v2/
+  type: resolver
+  schema: ./src/auth0/auth0Authentication.graphql
 

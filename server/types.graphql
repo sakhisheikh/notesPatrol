@@ -1,14 +1,12 @@
-# The following types define the data model of the example service
-# based on which the GraphQL API is generated
 
 type User @model {
+  #Required system field
   id: ID! @isUnique
-  name: String
-  dateOfBirth: DateTime
-
-  # Uncomment below - you can declare relations between models like this
-
-  # posts: [Post!]! @relation(name: "UserPosts")
+  #optional system fields
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  email: String
+  auth0UserId: String @isUnique
 }
 
 
