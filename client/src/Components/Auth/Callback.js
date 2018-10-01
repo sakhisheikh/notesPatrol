@@ -5,7 +5,7 @@ import authClient from './Auth'
 class Callback extends Component {
 
   componentDidMount() {
-    const { history, auth } = this.props;
+    const { history } = this.props;
     // try {
     console.log("Hi")
     authClient.handleAuthentication().then(() => {

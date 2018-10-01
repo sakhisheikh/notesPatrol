@@ -61,11 +61,9 @@ class MainLayout extends Component {
     });
   };
 
-  // handleClick = () => {
-  //   //const { auth } = this.props;
-  //   console.log("let's login");
-  //   Auth.signIn();
-  // }
+  handleClick = () => {
+    authClient.login();
+  }
 
 
   render() {
@@ -96,7 +94,7 @@ class MainLayout extends Component {
               <Typography className={classes.grow} variant="title" color="inherit" noWrap>
                 Daily Notes
               </Typography>
-              <Button color="inherit" onClick={authClient.signIn}>Login</Button>
+              <Button color="inherit" onClick={this.handleClick}>Login</Button>
             </Toolbar>
           </AppBar>
           {drawer}
