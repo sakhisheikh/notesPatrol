@@ -5,7 +5,7 @@ import auth0 from 'auth0-js';
 class Auth {
 
   constructor() {
-    this.auht0 = new auth0.WebAuth({
+    this.auth0 = new auth0.WebAuth({
       domain: 'notes-patrol.auth0.com',
       clientID: 'j8NIPMoCzmxH46EbMiuyIdr0DUbnDkDm',
       redirectUri: 'http://localhost:3001/callback',
@@ -20,7 +20,7 @@ class Auth {
   }
 
   login() {
-    this.auht0.authorize();
+    this.auth0.authorize();
   }
 
   handleAuthentication() {
